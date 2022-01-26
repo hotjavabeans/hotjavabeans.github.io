@@ -127,8 +127,8 @@ header h1 {
 
 a.to_nav:hover,
 a.to_nav:focus {
-  color: #1c1c1c;
-  background: #ccc;
+  color: var(--clr-neutral-900);
+  background: var(--clr-primary-200);
 }
 
 /* navigation */
