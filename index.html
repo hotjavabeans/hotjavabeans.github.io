@@ -16,10 +16,33 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <i class="em em-coffee"></i>
+      <header class="top-nav">
+        <div>
+          <i class="em em-coffee"></i>
+        </div>
         <h1 class="heading"><a href="#">hotjavabeans</a></h1>
-        <a class="to_nav" href="#primary_nav">Menu</a>
+
+        <input type="checkbox" id="menu-toggle">
+        <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+        <nav class="nav" id="primary_nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link">About Me</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Projects</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Contact</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Top</a>
+            </li>
+        </nav>
+        
+        <!-- <a class="to_nav" href="#primary_nav">Menu</a> -->
       </header>
       <main>
         <section class="hero">
@@ -48,21 +71,7 @@
       </main>
 
       <section>
-        <nav class="nav" id="primary_nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#" class="nav__link">About Me</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Projects</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Contact</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Top</a>
-            </li>
-        </nav>
+        
       </section>
     </div>
   </body>
