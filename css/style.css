@@ -60,6 +60,10 @@ h2 {
 
 /* Layout */
 
+.top-nav {
+  display: flex;
+}
+
 header,
 h2,
 p,
@@ -87,6 +91,11 @@ section {
   /* border-bottom: 1px solid #d8d8d8; */
   margin-inline: auto;
   width: 95%;
+}
+
+footer {
+  background: var(--clr-primary-400);
+  color: var(--clr-primary-200);
 }
 
 header {
@@ -138,12 +147,99 @@ a.to_nav:focus {
 }
 
 .nav__link {
-  display: block;
+  /* display: block; */
   color: var(--clr-primary-200);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   line-height: 2em;
-  border-bottom: 1px dotted var(--clr-primary-200);
-  padding: 0 0 0 calc(1vw * 2.5);
+  /* border-bottom: 1px dotted var(--clr-primary-200); */
+  /* padding: 0 0 0 calc(1vw * 2.5); */
+}
+
+.menu-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* padding-right: 40px; */
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 2000ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+.nav__list {
+  position: absolute;
+  top: 0;
+  margin-top: 50px;
+  left: 0;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+#menu-toggle ~ .nav__list li {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  transition-property: height;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+#menu-toggle:checked ~ .nav__list li {
+  border: 1px solid #333;
+  height: 2.5em;
+  padding: 0.5em;
+  transition-property: height;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.nav__list > li {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0.5em 0;
+  width: 100%;
+  color: var(--clr-primary-200);
+  background-color: var(--clr-primary-400);
+}
+.nav__list li:not(:last-child) {
+  border-bottom: 1px solid var(--clr-primary-200);
 }
