@@ -60,10 +60,6 @@ h2 {
 
 /* Layout */
 
-.top-nav {
-  display: flex;
-}
-
 header,
 h2,
 p,
@@ -84,7 +80,7 @@ section {
 
 .image {
   display: block;
-  max-width: 100%;
+  width: clamp(200px, 100%, 500px);
 }
 
 .container {
@@ -113,15 +109,13 @@ header h1 {
 .em-coffee {
   align-self: center;
 }
-/* .heading::before {
-  content: '☕';
-} */
 
 .heading a {
   color: var(--clr-primary-200);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+
 .to_nav {
   align-self: center;
   color: var(--clr-primary-200);
@@ -159,8 +153,8 @@ a.to_nav:focus {
 
 .menu-button-container {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
   /* padding-right: 40px; */
 }
 
@@ -171,9 +165,11 @@ a.to_nav:focus {
 .menu-button,
 .menu-button::before,
 .menu-button::after {
-  display: block;
-  background-color: #fff;
-  position: absolute;
+  display: flex;
+  /* flex-direction: column; */
+  /* align-self: center; */
+  background-color: var(--clr-primary-200);
+  /* position: absolute; */
   height: 4px;
   width: 30px;
   transition: transform 2000ms cubic-bezier(0.23, 1, 0.32, 1);
